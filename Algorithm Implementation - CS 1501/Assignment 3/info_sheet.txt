@@ -1,0 +1,45 @@
+========================================
+CS/COE 1501 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment.  Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name:  Devansh Desai
+
+Lecture section:  MW 6-7:15pm
+
+Recitation day and time:    M 7:30 - 8:20pm
+
+Assignment #:   3
+
+Program due date:   11/08/2015
+
+Handed in date:     11/08/2015
+
+Source code file name(s):
+Car.java
+CarTracker.java
+IndexMinPQ.java
+
+
+
+
+Other file name(s) (if relevant):
+info_sheet.txt
+documentation.txt
+
+
+
+
+Does your program run without error?:
+Some parts do not work as intended.
+
+If not, what is/are the error(s) and which parts of your program run correctly?:
+The update function is not currently working but everything else seems to be working perfectly.
+
+
+
+
+Additional comments to the grader:

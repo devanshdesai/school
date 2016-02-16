@@ -1,0 +1,13 @@
+<launch>
+    <!-- command: roslaunch gscam v41.launch -->
+    <include file="$(find gscam)/v4l.launch"/>
+
+    <!-- command: roslaunch mypackage cmvision.launch -->
+    <include file="$(find mypackage)/scripts/Lab4/cmvision.launch"/>
+
+    <!-- command: roslaunch kobuki_node minimal.launch -->
+    <include file="$(find kobuki_node)/launch/minimal.launch"/>
+
+    <!-- command: rosrun mypackage PID_control.py -->
+    <node name="PID_control" pkg="mypackage" type="PID_control.py"/>
+</launch>

@@ -1,0 +1,40 @@
+DEVANSH DESAI
+CS 1501 - FALL 2015
+ASSIGNEMENT 3 - 11/08/2015
+documentation.txt
+
+To implement a double indexable priority queue, I first started out with the file that from the textbook
+that implemented a indexable single priority queue. Essentially what I did to make it a double indexable
+priority queue was that I created an other array named pq2 and the inverse array named qp2. Then, I recreated
+methods corresponding to all of the methods already implemented by the author. For example, the author had a
+swim() function in the file. In order to make this function usable for a double PQ, I made a swimPrice() and a
+swimMileage() function. Basically, these two functions would do the exact same thing as swim() but for their
+respective PQs, since we're keeping track of two variables here, not one.
+
+For the insert methods, I place the key at the next available leaf node and the have it swim up if it needs to.
+The reason I have two insert methods is because I have to clone the Car object to be compatible with both PQs.
+How I compare objects is with compareTo(). I have different compareTo()'s based on if I specify if the object is
+being compared by price or mileage. So if priceOrMileage equals 0 for a Car object, it means that it is comparable
+with its price attribute. If it equals 1, it is comparable with its mileage attribute. For this reason, I have two copies
+of the same Car object in the two PQs. This does not really affect the space usage because though it uses 2N space, it is
+still asymptotically the same as having one copy of the Car objects. The Car objects are actually stored in the keys array.
+keys[i][0], for any i, contains the priceOrMileage = 0 cars and keys[i][1], for any i, contains the priceOrMileage = 1
+cars.
+
+The delete function also has two methods. I first go through the array of keys to check if VINs match. Then, if they do,
+I find where they are in the PQs, swap them with the last leaf node, and the swim or sink the swapped node if needed. I just
+set the key of the deleted node to null and move on.
+
+The update function, or changeKeyPrice() and changeKeyMileage(), do not work but they are supposed update the keys array with the new
+Car object and then swim or sink the resulting Car object based on the new attributes; however, for some reason, when I update
+the Car object, the retrieval of the lowest price or mileage Car still returns the old attributes.
+
+To find the lowest price or mileage car for a specific make/model, I go through either the mileage PQ or the price PQ and just compare
+with the make/model the user enters. If they match, I output that car.
+
+The runtimes are good for my implementation. An insert can be done in 2*log(n) time, or O(log(n)) since I'm adding to two PQs. A delete
+is O(nlog(n)). This is because in the worst case, the computer might have to traverse the whole PQ in order to match the VINs. After it
+finds it, it must delete that by swapping with the leaf node and swimming or sinking it. An update is O(n) because the computer has
+to go through the whole PQ in order to find a matching VIN. Retrievals are quick however. A retrieval of the lowest price or mileage car
+is O(1) since all it does is access the first index in the PQ. Retrieval of the smallest of a make/model is O(n) because we have to go
+through the array of keys in order to find a matching VIN.

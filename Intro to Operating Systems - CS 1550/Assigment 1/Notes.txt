@@ -1,0 +1,54 @@
+Need to submit two files:
+library.c
+driver.c (Should call all the functions)
+
+Cannot use (Should use syscalls):
+stdio.h
+String.h
+
+1) init_graphics()
+    i) open (/dev/fb(),())
+    ii) mmap()
+        use MAP_SHARED
+    iii) Size of the framebuffer
+        bit depth and bit resolution needed to calculate how much memory is needed
+    iv) Canonical mode
+        gcc ac (Need to disable canonical mode + echo mode)
+            - To do this, need to get current terminal setting ioctl( ... , TCGETS, struct terminos )
+            - Modify the fields
+            - ioctl( ... , TCSETS, ...)
+
+2) exit_graphics()
+    i) Enable canonical + echo mode
+    ii) munmap()
+    iii) close the framebuffer
+
+3) clear_screen()
+    i) Use write(), not printf()
+
+4) getkey()
+    i) fset
+    ii) Cannot block - should be for 0 seconds, not even 1 second
+
+5) sleep_ms()
+    i) Use nanosleep() system call
+    ii) Time * 10^6
+
+6) draw_pixel(x, y, color)
+    i) typedef unsigned short color_t
+    ii) usethe starting address
+        returned by map
+    iii) (color_t *) position = color
+
+7) draw_rect(xtopleft, ytopleft, width, height, color)
+
+8) draw_rect(xtopleft, ytopleft, width, height, color)
+
+9) draw_text()
+    i) Need to copy iso_font.h
+    ii) Include this header file in library.c
+    iii) ASCII 65
+        - iso_font(65*16 + 0) = 0
+            - Need to check all 8 bits of this byte (Use shift operators)
+            (____ + 15)
+    iv) Can have two functions - draw_text() and draw_character()

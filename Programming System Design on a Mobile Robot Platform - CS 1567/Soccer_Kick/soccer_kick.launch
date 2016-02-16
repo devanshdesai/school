@@ -1,0 +1,19 @@
+<launch>
+    <!-- command: roslaunch gscam v41.launch -->
+    <include file="$(find gscam)/v4l.launch"/>
+
+    <!-- command: roslaunch mypackage cmvision.launch -->
+    <include file="$(find mypackage)/scripts/Soccer_Kick/cmvision.launch"/>
+
+    <!-- command: roslaunch kobuki_node minimal.launch -->
+    <include file="$(find kobuki_node)/launch/minimal.launch"/>
+
+    <!-- command: rosrun mypackage soccer.py -->
+    <node name="soccer" pkg="mypackage" type="soccer_jon_test.py"/>
+
+    <!-- command: rosrun mypackage resetOdom.py -->
+    <node name="resetOdom" pkg="mypackage" type="resetOdom.py"/>
+
+    <!-- command: rosrun mypackage odom.py -->
+    <node name="odom" pkg="mypackage" type="odom.py"/>
+</launch>

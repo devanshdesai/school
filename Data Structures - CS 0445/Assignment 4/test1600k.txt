@@ -1,0 +1,133 @@
+PROPERTY OF DEVANSH DESAI
+UNIVERSITY OF PITTSBURGH - CS 0445
+
+
+OUTPUT OF ASSIG4.JAVA
+
+Algorithm: Simple QuickSort
+Array Size: 1600000
+Order: Random
+Number of Trials: 10
+Average Time Per Trial: 0.000000000 seconds
+
+Algorithm: Median of Three (5)
+Array Size: 1600000
+Order: Random
+Number of Trials: 10
+Average Time Per Trial: 0.370060107 seconds
+
+Algorithm: Median of Three (10)
+Array Size: 1600000
+Order: Random
+Number of Trials: 10
+Average Time Per Trial: 0.362514561 seconds
+
+Algorithm: Median of Three (20)
+Array Size: 1600000
+Order: Random
+Number of Trials: 10
+Average Time Per Trial: 0.355339439 seconds
+
+Algorithm: Random Pivot (5)
+Array Size: 1600000
+Order: Random
+Number of Trials: 10
+Average Time Per Trial: 0.571255658 seconds
+
+Algorithm: MergeSort
+Array Size: 1600000
+Order: Random
+Number of Trials: 10
+Average Time Per Trial: 0.564872505 seconds
+
+Algorithm: ShellSort
+Array Size: 1600000
+Order: Random
+Number of Trials: 10
+Average Time Per Trial: 1.587184824 seconds
+________________________________________________
+
+Algorithm: Simple QuickSort
+Array Size: 1600000
+Order: Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.000000000 seconds
+
+Algorithm: Median of Three (5)
+Array Size: 1600000
+Order: Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.078477635 seconds
+
+Algorithm: Median of Three (10)
+Array Size: 1600000
+Order: Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.073552457 seconds
+
+Algorithm: Median of Three (20)
+Array Size: 1600000
+Order: Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.070168306 seconds
+
+Algorithm: Random Pivot (5)
+Array Size: 1600000
+Order: Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.184068979 seconds
+
+Algorithm: MergeSort
+Array Size: 1600000
+Order: Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.013646815 seconds
+
+Algorithm: ShellSort
+Array Size: 1600000
+Order: Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.781712140 seconds
+________________________________________________
+
+Algorithm: Simple QuickSort
+Array Size: 1600000
+Order: Reverse Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.000000000 seconds
+
+Algorithm: Median of Three (5)
+Array Size: 1600000
+Order: Reverse Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.129408296 seconds
+
+Algorithm: Median of Three (10)
+Array Size: 1600000
+Order: Reverse Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.124627631 seconds
+
+Algorithm: Median of Three (20)
+Array Size: 1600000
+Order: Reverse Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.124596881 seconds
+
+Algorithm: Random Pivot (5)
+Array Size: 1600000
+Order: Reverse Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.184065071 seconds
+
+Algorithm: MergeSort
+Array Size: 1600000
+Order: Reverse Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.200646782 seconds
+
+Algorithm: ShellSort
+Array Size: 1600000
+Order: Reverse Sorted
+Number of Trials: 10
+Average Time Per Trial: 0.808849059 seconds

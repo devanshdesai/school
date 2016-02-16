@@ -1,0 +1,101 @@
+# PROPERTY OF DEVANSH DESAI
+# CREATED 2/17/15
+# UNIVERSITY OF PITTSBURGH - CS 0447
+
+.text
+li	$a0, 0
+li	$a1, 39
+li	$a2, 2
+li	$t9, 8
+li	$t7, 9
+jal	drawSquare
+li	$v0, 10
+syscall
+
+drawSquare:
+# $a0 contains x coordinate of top left corner
+# $a1 contains y coordinate of top left corner
+# $a2 contains the colors of the square
+addi	$sp, $sp, -4
+sw	$ra, 0($sp)
+jal	drawHorizontalLine
+jal	drawVerticalLine
+addi	$a1, $a1, 9
+jal	drawHorizontalLine
+addi	$a1, $a1, -9
+addi	$a0, $a0, 7
+jal	drawVerticalLine
+lw	$ra, 0($sp)
+addi	$sp, $sp, 4
+jr	$ra
+drawHorizontalLine:
+# $a0 contains x coordinate of the left end of the line
+# $a1 contains y coordinate of the left end of the line
+# $a2 contains the size, or length, of the line
+# $a3 contains the color of the line
+addi	$sp, $sp, -4
+sw	$ra, 0($sp)
+li	$t8, 0
+add	$t8, $a0, $t9
+Hori:
+jal	setLED
+addi	$a0, $a0, 1
+beq	$t8, $a0, exitHorizontal
+j	Hori
+exitHorizontal:
+addi	$a0, $a0, -8
+lw	$ra, 0($sp)
+addi	$sp, $sp, 4
+jr	$ra
+drawVerticalLine:
+# $a0 contains x coordinate of the top end of the line
+# $a1 contains y coordinate of the top end of the line
+# $a2 contains the size, or length, of the line
+# $a3 contains the color of the line
+addi	$sp, $sp, -4
+sw	$ra, 0($sp)
+li	$t8, 0
+add	$t8, $a1, $t7
+Vert:
+jal	setLED
+addi	$a1, $a1, 1
+beq	$t8, $a1, exitVertical
+j	Vert
+exitVertical:
+addi	$a1, $a1, -9
+lw	$ra, 0($sp)
+addi	$sp, $sp, 4
+jr	$ra
+
+
+
+
+setLED:
+# arguments: $a0 is x, $a1 is y, $a2 is color
+# byte offset into display = y*16 bytes + (x/4)
+addi	$sp, $sp, -4
+sw	$ra, 0($sp)
+li	$t0, 0
+sll	$t0,$a1,4		# y*16 bytes
+srl 	$t1,$a0,2		# x/4
+add 	$t0,$t0,$t1		# byte offset into display
+li 	$t2,0xffff0008 		# base address of LED display
+add 	$t0,$t2,$t0		# address of byte with the LED
+# now, compute led position in the	byte and the mask for it
+andi 	$t1,$a0,0x3		# remainder is led position in byte
+neg 	$t1,$t1			# negate position for subtraction
+addi 	$t1,$t1,3			# bit positions	in	reverse	order
+sll	$t1,$t1,1			# led is 2 bits
+# compute two masks: one to clear field, one to	set new	color
+li	$t2,3
+sllv 	$t2,$t2,$t1
+not	$t2,$t2			# bit mask for clearing	current	color
+sllv 	$t1,$a2,$t1		# bit mask for setting	color
+# get current LED value, set the new field, store it back to LED
+lbu 	$t3,0($t0)			# read current LED value
+and 	$t3,$t3,$t2			# clear	the field for the color
+or 	$t3,$t3,$t1			# set color field
+sb 	$t3,0($t0)			# update display
+lw	$ra, 0($sp)
+addi	$sp, $sp, 4
+jr 	$ra

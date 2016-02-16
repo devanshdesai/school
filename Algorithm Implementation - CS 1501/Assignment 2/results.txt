@@ -1,0 +1,113 @@
+DEVANSH DESAI
+CS 1501 - FALL 2015
+ASSIGNMENT 02 - results.txt
+
+This document compares the results of the compressions by the 3 modes of myLZW and by 7zip.
+The format of the results is as follows:
+
+-----[FILE NAME] (Original: [FILE SIZE])-----
+[COMPRESSED FILE SIZE]   |   [COMPRESSION RATIO]   -   [COMPRESSION METHOD]
+...
+...
+...
+
+
+
+
+-----all.tar (Original: 2960 KB)-----
+1804 KB   |   1.641   -   LZW Fixed Width Codeword
+1751 KB   |   1.690   -   myLZW Do Nothing Mode
+1151 KB   |   2.572   -   myLZW Reset Mode
+1775 KB   |   1.668   -   myLZW Monitor Mode
+810  KB   |   3.654   -   7-Zip
+
+-----assig2.doc (Original: 85 KB)-----
+73   KB   |   1.164   -   LZW Fixed Width Codeword
+40   KB   |   2.125   -   myLZW Do Nothing Mode
+40   KB   |   2.125   -   myLZW Reset Mode
+40   KB   |   2.125   -   myLZW Monitor Mode
+21   KB   |   4.048   -   7-Zip
+
+-----bmps.tar (Original: 1080 KB)-----
+904  KB   |   1.195    -   LZW Fixed Width Codeword
+80   KB   |   13.500   -   myLZW Do Nothing Mode
+80   KB   |   13.500   -   myLZW Reset Mode
+80   KB   |   13.500   -   myLZW Monitor Mode
+53   KB   |   20.377   -   7-Zip
+
+-----code.txt (Original: 71 KB)-----
+31   KB   |   2.290   -   LZW Fixed Width Codeword
+24   KB   |   2.958   -   myLZW Do Nothing Mode
+24   KB   |   2.958   -   myLZW Reset Mode
+24   KB   |   2.958   -   myLZW Monitor Mode
+14   KB   |   5.071   -   7-Zip
+
+-----code2.txt (Original: 57 KB)-----
+24   KB   |   2.375   -   LZW Fixed Width Codeword
+21   KB   |   2.714   -   myLZW Do Nothing Mode
+21   KB   |   2.714   -   myLZW Reset Mode
+21   KB   |   2.714   -   myLZW Monitor Mode
+13   KB   |   4.385   -   7-Zip
+
+-----edit.exe (Original: 231 KB)-----
+245  KB   |   0.943   -   LZW Fixed Width Codeword
+153  KB   |   1.510   -   myLZW Do Nothing Mode
+149  KB   |   1.550   -   myLZW Reset Mode
+153  KB   |   1.510   -   myLZW Monitor Mode
+97   KB   |   2.381   -   7-Zip
+
+-----frosty.jpg (Original: 124 KB)-----
+174  KB   |   0.714   -   LZW Fixed Width Codeword
+160  KB   |   0.775   -   myLZW Do Nothing Mode
+168  KB   |   0.734   -   myLZW Reset Mode
+160  KB   |   0.775   -   myLZW Monitor Mode
+124  KB   |   1.000   -   7-Zip
+
+-----gone_fishing.bmp (Original: 17 KB)-----
+10   KB   |   1.700   -   LZW Fixed Width Codeword
+9    KB   |   1.889   -   myLZW Do Nothing Mode
+9    KB   |   1.889   -   myLZW Reset Mode
+9    KB   |   1.889   -   myLZW Monitor Mode
+8    KB   |   2.125   -   7-Zip
+
+-----large.txt (Original: 1193 KB)-----
+591  KB   |   2.019   -   LZW Fixed Width Codeword
+491  KB   |   2.430   -   myLZW Do Nothing Mode
+516  KB   |   2.312   -   myLZW Reset Mode
+491  KB   |   2.430   -   myLZW Monitor Mode
+393  KB   |   3.036   -   7-Zip
+
+-----Lego-big.gif (Original: 92 KB)-----
+126  KB   |   0.730   -   LZW Fixed Width Codeword
+120  KB   |   0.767   -   myLZW Do Nothing Mode
+120  KB   |   0.767   -   myLZW Reset Mode
+120  KB   |   0.767   -   myLZW Monitor Mode
+91   KB   |   1.011   -   7-Zip
+
+-----medium.txt (Original: 25 KB)-----
+13   KB   |   1.923   -   LZW Fixed Width Codeword
+13   KB   |   1.923   -   myLZW Do Nothing Mode
+13   KB   |   1.923   -   myLZW Reset Mode
+13   KB   |   1.923   -   myLZW Monitor Mode
+11   KB   |   2.273   -   7-Zip
+
+-----texts.tar (Original: 1350 KB)-----
+989 KB    |   1.365   -   LZW Fixed Width Codeword
+584  KB   |   2.312   -   myLZW Do Nothing Mode
+577  KB   |   2.340   -   myLZW Reset Mode
+584  KB   |   2.312   -   myLZW Monitor Mode
+427  KB   |   3.162   -   7-Zip
+
+-----wacky.bmp (Original: 901 KB)-----
+5    KB   |   180.200   -   LZW Fixed Width Codeword
+4    KB   |   225.250   -   myLZW Do Nothing Mode
+4    KB   |   225.250   -   myLZW Reset Mode
+4    KB   |   225.250   -   myLZW Monitor Mode
+3    KB   |   300.333   -   7-Zip
+
+-----winnt256.bmp (Original: 154 KB)-----
+156  KB   |   0.988   -   LZW Fixed Width Codeword
+62   KB   |   2.434   -   myLZW Do Nothing Mode
+62   KB   |   2.434   -   myLZW Reset Mode
+62   KB   |   2.434   -   myLZW Monitor Mode
+43   KB   |   3.581   -   7-Zip

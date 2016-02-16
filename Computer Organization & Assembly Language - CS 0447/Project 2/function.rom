@@ -1,0 +1,28 @@
+v2.0 raw
+# JrMIPS ISA version v0.8 03/04/15
+# to load this file into Logisim:
+# 1) save the output from the assembler to a file
+# 2) use the poke tool in Logisim and control-click the ROM/RAM component
+# 3) select Load Image menu option
+# 4) load the saved file
+1FC1
+2FFF
+1901
+29FF
+7800
+1001
+2013
+DC18
+1901
+2955
+7800
+6000
+2FFE
+5DC1
+7000
+B024
+21FE
+DC18
+5DC0
+2E02
+CC00
